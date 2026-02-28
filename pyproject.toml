@@ -1,0 +1,25 @@
+[project]
+name="pyramid_tdom_poc"
+dynamic = ["version"]
+dependencies = [
+    "pyramid",
+    "pyramid_tdom",
+    "gunicorn",
+]
+requires-python = ">= 3.14"
+description = "Proof of concept (poc) using tdom in pyramid."
+license="MIT"
+
+
+[build-system]
+requires = ["hatchling", "versioningit"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "versioningit"
+default-version = "0.0.0+unknown"
+
+
+[tool.hatch.build.hooks.versioningit-onbuild]
+source-file="src/pyramid_tdom_poc/__about__.py"
+build-file="pyramid_tdom_poc/__about__.py"
